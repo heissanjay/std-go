@@ -202,6 +202,88 @@ for _, v := range result {
 // IndexRune takes a string and rune and the index of the first occ of the rune in string s
 // fmt.Println(strings.IndexRune("Hello", 'e'))
 
+// J 
+
+// Joins takes a slice of string and return a concatenated string with specified delimiter
+
+//  fruits := []string{"apple", "banana", "orange", "pineapple"}
+//  fmt.Println(strings.Join(fruits, "+")) //apple+banana+orange+pineapple 
+
+
+// L 
+// return the last index of the substr in s  
+  //fmt.Println(strings.LastIndex("go lang learning", "l"))
+// returns the index of any unicode point from chars in s, or -1 if no 
+ // fmt.Println(strings.LastIndexAny("go lang Learning", "l")) // output: 3
+  /*
+    Mostly use Any suffixed method whenever dealing with unicode
+  */
+
+ // fmt.Println(strings.LastIndexByte("I know who", 'i')) // -1
+ // fmt.Println(strings.LastIndexByte("hello world", 'd')) // 10
+
+
+ // result := strings.LastIndexFunc("quickbrown@fox", func(r rune)bool{
+   // return !unicode.IsNumber(r) && !unicode.IsLetter(r)
+ // })
+
+ // fmt.Println(result)
+
+// M 
+/*
+Map returs a copy of the string s with all its characters modified according
+to the mapping functions. If mapping return a negative value, the character
+is dropped from the string with no replacement
+*/
+
+
+// Example:
+
+//upperCased := strings.Map(func(r rune)rune{
+  //return unicode.ToUpper(r)
+//}, "Hello there")
+
+//fmt.Println(upperCased)
+
+// R 
+
+// takes a string, a string to append and it count 
+
+// fmt.Println("ba" + strings.Repeat("na", 2)) //prints: banana
+
+
+// find and replace kind of
+
+//fmt.Println(strings.Replace("foo bar zoo", "o", "e", 2)) // fee bar zoo 
+
+
+// Replace all 
+//fmt.Println(strings.ReplaceAll("foo bar zoo", "o", "e"))
+
+// S 
+//result := strings.Split("Hey my name is John Doe", " ")
+//fmt.Println(result)// [Hey my name is John Doe]
+
+//result := strings.SplitAfter("Hey my name is John Doe", " ")
+// whenever the instance of the delimiter is encountered, that part 
+// will be takes as an item "Hey ", "my ", "name ", "is ", "John ", "Doe"
+//fmt.Println(result) // [Hey  my  name  is  John  Doe]
+//fmt.Println(len(result))
+
+// split the string into n instance after the delimiter
+//result := strings.SplitAfterN("Hey there how are you", " ", 3)
+//for i, v := range result {
+  //fmt.Printf("Word %v is %v \n", i, v) // len(result) = 3
+//}
+
+
+//result := strings.SplitN("Hey there my name is john cena", " ", 2)
+
+//for i, v := range result {
+  //fmt.Printf("item %v is %v\n", i, v)
+//}
+
+
 
 
 
