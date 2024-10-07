@@ -2,6 +2,7 @@ package main
 
 import (
   "fmt"
+  "unicode"
   "strings"
 )
 
@@ -283,9 +284,62 @@ is dropped from the string with no replacement
   //fmt.Printf("item %v is %v\n", i, v)
 //}
 
+// T 
+
+//fmt.Println(strings.ToLower("HELLO THERE"))
+//fmt.Println(strings.ToLowerSpecial(unicode.TurkishCase, "Önnek İş"))
+
+// converts each char to upper case 
+//fmt.Println(strings.ToTitle("Hello there"))
+
+// result look same as title: TODO should look into how its working differs from Title method 
+//fmt.Println(strings.ToUpper("hello world"))
 
 
+//fmt.Println(strings.ToUpperSpecial(unicode.TurkishCase, "örnek iş"))
+// takes a string s which may contain invalid utf8 byte sequence
+// we can replace those with the replacement string 
+// fmt.Println(strings.ToValidUTF8("Hello, \xff\xfe world", "Invalid"))
+
+// capitalize first letter every word 
+// fmt.Println(strings.Title("Hello world"))
+// removes leading and trailing char 'c' in the string s
+//fmt.Println(strings.Trim("hello there", "e")) // output: hello ther 
+
+// trims any leading and trailing numbers
+//fmt.Println(strings.TrimFunc("Hello There234", func(r rune)bool{
+  //return unicode.IsNumber(r)
+//}))
 
 
+// TrimLeft, Right + Func 
+// Trim Prefix, TrimSuffix 
+// Trim Space 
+
+//fmt.Println(strings.TrimLeft("Hello world", "Hello worl"))
+// remove any leading number 
+//fmt.Println(strings.TrimLeftFunc("3245Hello World", func(r rune)bool{
+  //return unicode.IsNumber(r)
+//}))
+
+// remove any leading and trailing space 
+//fmt.Println(strings.TrimSpace("  Hello world  "))
+// remove the training substr from s 
+// fmt.Println(strings.TrimRight("Hello world", "world"))
+//  remove trailing numbers
+//fmt.Println(strings.TrimRightFunc("Hello World123", func(r rune)bool{
+  //return unicode.IsNumber(r)
+//}))
+
+// remove any prefix with the prefix in String s 
+//fmt.Println(strings.TrimPrefix("Hello world", "H"))
+// removes any suffic with the suffix in string s 
+//fmt.Println(strings.TrimSuffix("Hello world", "rld"))
+
+//fmt.Println(strings.ToTitleSpecial(unicode.TurkishCase, "Önnek İş"))
+
+  /*
+  ALL STRING METHOD COVERED
+*/ 
 
 }
