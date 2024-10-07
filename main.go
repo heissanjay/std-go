@@ -2,7 +2,6 @@ package main
 
 import (
   "fmt"
-  "unicode"
   "strings"
 )
 
@@ -340,6 +339,56 @@ is dropped from the string with no replacement
 
   /*
   ALL STRING METHOD COVERED
-*/ 
+*/
+
+// Lets start with Types 
+/*
+  - Builder 
+  - Reader
+  - Replacer 
+*/
+
+var b strings.Builder 
+
+//fmt.Println(b.Cap())
+b.WriteString("Hey")
+
+b.WriteString("There")
+
+fmt.Println(b.String())
+fmt.Println(b.Cap())
+
+
+b.Grow(10)
+// doubles the size until the grow + existing capacity < scaled size
+fmt.Println(b.Cap())// 32
+
+
+fmt.Println(b.Len())
+
+b.Reset()
+
+fmt.Println(b.String())
+
+// Write 
+// WriteByte
+// WriteRune
+// WriteString 
+
+
+content := []byte("Hello World")
+b.Write(content)
+fmt.Println(b.String())
+
+b.WriteRune('1')
+fmt.Println(b.String())
+
+b.WriteByte(byte('9'))
+
+fmt.Println(b.String())
+
+b.WriteString(" Multiverse")
+fmt.Println(b.String())
 
 }
+
