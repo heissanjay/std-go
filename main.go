@@ -31,7 +31,17 @@ import (
     - TryLock (tried to lock and report whether it is succeeded or not)
     - Unlock [Unlocks the lock]
  - Map 
-
+    Map is concurrently accessible map implementation in Go's sync package it does not require any external locking
+    - Clear()
+    - CompareAndDelete()
+    - CompareAndSwap()
+    - Delete()
+    - Load()
+    - LoadAndDelete()
+    - LoadOrStore()
+    - Range()
+    - Store()
+    - Swap()
  O 
  - Once 
 
@@ -153,8 +163,32 @@ func main(){
   wg.Wait()
   fmt.Println(counter)
 */ 
+/*
+ var mp sync.Map 
+
+ mp.Store("India", "Delhi")
+ mp.Store("United Kingdom", "London")
 
 
+  ok := mp.CompareAndDelete("India", "Delhi")
+  fmt.Println(ok)
 
+ if value, ok := mp.Load("India"); ok {
+    fmt.Println(value)
+  }
+ 
 
+val, ok = mp.LoadAndDelete("United Kingdom")
+fmt.Println(val)
+fmt.Println(ok)
+
+fmt.Println(previous)
+fmt.Println(ok)
+
+mp.Clear()
+mp.Range(func(key, value interface{})bool{
+  fmt.Println(key, value)
+  return true
+})
+*/
 }
